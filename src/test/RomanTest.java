@@ -90,6 +90,14 @@ public class RomanTest {
     }
 
     @Test
+    public void shouldFormatHundred() {
+        Assert.assertEquals("XC", formatRoman(90));
+        Assert.assertEquals("XCIX", formatRoman(99));
+        Assert.assertEquals("C", formatRoman(100));
+        Assert.assertEquals("CX", formatRoman(110));
+    }
+
+    @Test
     public void shouldFormatForty() {
         Assert.assertEquals("XL", formatRoman(40));
         Assert.assertEquals("XLIX", formatRoman(49));
@@ -118,20 +126,26 @@ public class RomanTest {
         return formatRomanNonNegative(i);
     }
 
-    private static String formatRomanNonNegative(int i) {
-        Map<Integer, String> a = new LinkedHashMap<>();
-        a.put(50, "L");
-        a.put(40, "XL");
-        a.put(10, "X");
-        a.put(9, "IX");
-        a.put(5, "V");
-        a.put(4, "IV");
-        a.put(1, "I");
+    private static String formatRomanNonNegative(int number) {
+        Map<Integer, String> digits = new LinkedHashMap<>();
+        digits.put(100, "C");
+        digits.put(90, "XC");
+        digits.put(50, "L");
+        digits.put(40, "XL");
+        digits.put(10, "X");
+        digits.put(9, "IX");
+        digits.put(5, "V");
+        digits.put(4, "IV");
+        digits.put(1, "I");
+        return getString(number, digits);
+    }
+
+    private static String getString(int remainder, Map<Integer, String> digits) {
         StringBuilder result = new StringBuilder();
-        for (Map.Entry<Integer, String> entry : a.entrySet()) {
-            while (i >= entry.getKey()) {
+        for (Map.Entry<Integer, String> entry : digits.entrySet()) {
+            while (remainder >= entry.getKey()) {
                 result.append(entry.getValue());
-                i -= entry.getKey();
+                remainder -= entry.getKey();
             }
         }
         return result.toString();
