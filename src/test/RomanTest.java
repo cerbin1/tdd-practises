@@ -23,6 +23,11 @@ public class RomanTest {
         Assert.assertEquals("V", formatRoman(5));
     }
 
+    @Test
+    public void shouldFormatSix() {
+        Assert.assertEquals("VI", formatRoman(6));
+    }
+
     @Test(expected = IllegalArgumentException.class)
     public void shouldThrowForNegativeOne() {
         formatRoman(-1);
@@ -47,11 +52,12 @@ public class RomanTest {
     }
 
     private static String formatRomanNonNegative(int i) {
-        if (i == 5) {
-            return "V";
+        String result = "";
+        if (i >= 5) {
+            result += "V";
+            i -= 5;
         }
-        String result = "I";
-        for (int j = 1; j < i; j++) {
+        for (int j = 0; j < i; j++) {
             result += "I";
         }
         return result;
