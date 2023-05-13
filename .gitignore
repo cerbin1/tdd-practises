@@ -1,3 +1,6 @@
 # Project
 .idea/
 *.iml
+
+# Java
+out/
