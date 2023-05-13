@@ -1,6 +1,9 @@
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 public class RomanTest {
 
     @Test
@@ -105,24 +108,17 @@ public class RomanTest {
 
     private static String formatRomanNonNegative(int i) {
         String result = "";
-        while (i >= 10) {
-            result += "X";
-            i -= 10;
-        }
-        if (i == 9) {
-            result += "IX";
-            i = 0;
-        }
-        if (i == 4) {
-            result += "IV";
-            i = 0;
-        }
-        if (i >= 5) {
-            result += "V";
-            i -= 5;
-        }
-        for (int j = 0; j < i; j++) {
-            result += "I";
+        Map<Integer, String> a = new LinkedHashMap<>();
+        a.put(10, "X");
+        a.put(9, "IX");
+        a.put(5, "V");
+        a.put(4, "IV");
+        a.put(1, "I");
+        for (Map.Entry<Integer, String> entry : a.entrySet()) {
+            while (i >= entry.getKey()) {
+                result += entry.getValue();
+                i -= entry.getKey();
+            }
         }
         return result;
     }
