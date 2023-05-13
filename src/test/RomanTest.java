@@ -83,6 +83,18 @@ public class RomanTest {
         Assert.assertEquals("XIII", formatRoman(13));
     }
 
+    @Test
+    public void shouldFormatFifty() {
+        Assert.assertEquals("L", formatRoman(50));
+        Assert.assertEquals("LIX", formatRoman(59));
+    }
+
+    @Test
+    public void shouldFormatForty() {
+        Assert.assertEquals("XL", formatRoman(40));
+        Assert.assertEquals("XLIX", formatRoman(49));
+    }
+
     @Test(expected = IllegalArgumentException.class)
     public void shouldThrowForNegativeOne() {
         formatRoman(-1);
@@ -107,13 +119,15 @@ public class RomanTest {
     }
 
     private static String formatRomanNonNegative(int i) {
-        String result = "";
         Map<Integer, String> a = new LinkedHashMap<>();
+        a.put(50, "L");
+        a.put(40, "XL");
         a.put(10, "X");
         a.put(9, "IX");
         a.put(5, "V");
         a.put(4, "IV");
         a.put(1, "I");
+        String result = "";
         for (Map.Entry<Integer, String> entry : a.entrySet()) {
             while (i >= entry.getKey()) {
                 result += entry.getValue();
