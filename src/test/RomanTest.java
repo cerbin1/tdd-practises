@@ -43,6 +43,11 @@ public class RomanTest {
         Assert.assertEquals("VIII", formatRoman(8));
     }
 
+    @Test
+    public void shouldFormatTen() {
+        Assert.assertEquals("X", formatRoman(10));
+    }
+
     @Test(expected = IllegalArgumentException.class)
     public void shouldThrowForNegativeOne() {
         formatRoman(-1);
@@ -70,6 +75,10 @@ public class RomanTest {
         String result = "";
         if (i == 4) {
             result = "IV";
+            i = 0;
+        }
+        if (i == 10) {
+            result = "X";
             i = 0;
         }
         if (i >= 5) {
