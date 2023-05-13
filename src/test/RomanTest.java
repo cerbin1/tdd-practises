@@ -18,9 +18,13 @@ public class RomanTest {
         formatRoman(-2);
     }
 
+    @Test(expected = IllegalArgumentException.class)
+    public void shouldThrowForZero() {
+        formatRoman(0);
+    }
 
     private String formatRoman(int i) {
-        if (i < 0) {
+        if (i < 1) {
             throw new IllegalArgumentException();
         }
         return "I";
