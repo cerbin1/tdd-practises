@@ -137,17 +137,17 @@ public class RomanTest {
         digits.put(5, "V");
         digits.put(4, "IV");
         digits.put(1, "I");
-        return getString(number, digits);
+        return formatNumberWithDigits(number, digits);
     }
 
-    private static String getString(int remainder, Map<Integer, String> digits) {
-        StringBuilder result = new StringBuilder();
+    private static String formatNumberWithDigits(int remainder, Map<Integer, String> digits) {
+        StringBuilder formattedNumber = new StringBuilder();
         for (Map.Entry<Integer, String> entry : digits.entrySet()) {
             while (remainder >= entry.getKey()) {
-                result.append(entry.getValue());
+                formattedNumber.append(entry.getValue());
                 remainder -= entry.getKey();
             }
         }
-        return result.toString();
+        return formattedNumber.toString();
     }
 }
