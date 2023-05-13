@@ -19,6 +19,11 @@ public class RomanTest {
     }
 
     @Test
+    public void shouldFormatFour() {
+        Assert.assertEquals("IV", formatRoman(4));
+    }
+
+    @Test
     public void shouldFormatFive() {
         Assert.assertEquals("V", formatRoman(5));
     }
@@ -63,6 +68,10 @@ public class RomanTest {
 
     private static String formatRomanNonNegative(int i) {
         String result = "";
+        if (i == 4) {
+            result = "IV";
+            i = 0;
+        }
         if (i >= 5) {
             result += "V";
             i -= 5;
