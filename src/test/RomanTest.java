@@ -49,8 +49,10 @@ public class RomanTest {
     }
 
     @Test
-    public void shouldFormatEleven() {
+    public void shouldFormatTeen() {
         Assert.assertEquals("XI", formatRoman(11));
+        Assert.assertEquals("XII", formatRoman(12));
+        Assert.assertEquals("XIII", formatRoman(13));
     }
 
     @Test(expected = IllegalArgumentException.class)
