@@ -13,6 +13,11 @@ public class RomanTest {
         Assert.assertEquals("II", formatRoman(2));
     }
 
+    @Test
+    public void shouldFormatThree() {
+        Assert.assertEquals("III", formatRoman(3));
+    }
+
     @Test(expected = IllegalArgumentException.class)
     public void shouldThrowForNegativeOne() {
         formatRoman(-1);
@@ -38,7 +43,7 @@ public class RomanTest {
 
     private static String formatRomanNonNegative(int i) {
         String result = "I";
-        if (i == 2) {
+        for (int j = 1; j < i; j++) {
             result += "I";
         }
         return result;
