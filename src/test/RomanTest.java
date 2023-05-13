@@ -61,6 +61,7 @@ public class RomanTest {
     @Test
     public void shouldFormatTwentyFour() {
         Assert.assertEquals("XXIV", formatRoman(24));
+        Assert.assertEquals("XXXIV", formatRoman(34));
     }
 
     @Test
