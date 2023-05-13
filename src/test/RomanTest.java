@@ -127,13 +127,13 @@ public class RomanTest {
         a.put(5, "V");
         a.put(4, "IV");
         a.put(1, "I");
-        String result = "";
+        StringBuilder result = new StringBuilder();
         for (Map.Entry<Integer, String> entry : a.entrySet()) {
             while (i >= entry.getKey()) {
-                result += entry.getValue();
+                result.append(entry.getValue());
                 i -= entry.getKey();
             }
         }
-        return result;
+        return result.toString();
     }
 }
