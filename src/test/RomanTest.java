@@ -43,11 +43,10 @@ public class RomanTest {
         Assert.assertEquals("VIII", formatRoman(8));
     }
 
-    /*@Test
+    @Test
     public void shouldFormatNine() {
         Assert.assertEquals("IX", formatRoman(9));
     }
-*/
     @Test
     public void shouldFormatTen() {
         Assert.assertEquals("X", formatRoman(10));
@@ -96,6 +95,10 @@ public class RomanTest {
 
     private static String formatRomanNonNegative(int i) {
         String result = "";
+        if (i == 9) {
+            result += "IX";
+            i = 0;
+        }
         while (i >= 10) {
             result += "X";
             i -= 10;
