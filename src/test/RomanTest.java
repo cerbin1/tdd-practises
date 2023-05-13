@@ -28,6 +28,16 @@ public class RomanTest {
         Assert.assertEquals("VI", formatRoman(6));
     }
 
+    @Test
+    public void shouldFormatSeven() {
+        Assert.assertEquals("VII", formatRoman(7));
+    }
+
+    @Test
+    public void shouldFormatEight() {
+        Assert.assertEquals("VIII", formatRoman(8));
+    }
+
     @Test(expected = IllegalArgumentException.class)
     public void shouldThrowForNegativeOne() {
         formatRoman(-1);
