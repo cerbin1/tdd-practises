@@ -154,14 +154,14 @@ public class RomanTest {
     }
 
 
-    private String formatRoman(int i) {
-        if (i < 1) {
+    private String formatRoman(int number) {
+        if (number < 1) {
             throw new IllegalArgumentException();
         }
-        if (i > 3999) {
+        if (number > 3999) {
             throw new IllegalArgumentException();
         }
-        return formatRomanNonNegative(i);
+        return formatRomanNonNegative(number);
     }
 
     private static String formatRomanNonNegative(int number) {
