@@ -84,6 +84,12 @@ public class RomanTest {
     }
 
     @Test
+    public void shouldFormatForty() {
+        Assert.assertEquals("XL", formatRoman(40));
+        Assert.assertEquals("XLIX", formatRoman(49));
+    }
+
+    @Test
     public void shouldFormatFifty() {
         Assert.assertEquals("L", formatRoman(50));
         Assert.assertEquals("LIX", formatRoman(59));
@@ -95,12 +101,6 @@ public class RomanTest {
         Assert.assertEquals("XCIX", formatRoman(99));
         Assert.assertEquals("C", formatRoman(100));
         Assert.assertEquals("CX", formatRoman(110));
-    }
-
-    @Test
-    public void shouldFormatForty() {
-        Assert.assertEquals("XL", formatRoman(40));
-        Assert.assertEquals("XLIX", formatRoman(49));
     }
 
     @Test(expected = IllegalArgumentException.class)
