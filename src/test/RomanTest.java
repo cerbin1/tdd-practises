@@ -134,6 +134,11 @@ public class RomanTest {
     }
 
     @Test(expected = IllegalArgumentException.class)
+    public void shouldThrowForExceededNumber() {
+        formatRoman(4000);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
     public void shouldThrowForNegativeOne() {
         formatRoman(-1);
     }
@@ -151,6 +156,9 @@ public class RomanTest {
 
     private String formatRoman(int i) {
         if (i < 1) {
+            throw new IllegalArgumentException();
+        }
+        if (i > 3999) {
             throw new IllegalArgumentException();
         }
         return formatRomanNonNegative(i);
