@@ -101,6 +101,8 @@ public class RomanTest {
         Assert.assertEquals("XCIX", formatRoman(99));
         Assert.assertEquals("C", formatRoman(100));
         Assert.assertEquals("CX", formatRoman(110));
+        Assert.assertEquals("CL", formatRoman(150));
+        Assert.assertEquals("CXLIX", formatRoman(149));
     }
 
     @Test(expected = IllegalArgumentException.class)
