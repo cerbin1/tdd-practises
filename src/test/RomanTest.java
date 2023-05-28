@@ -1,195 +1,152 @@
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-
 public class RomanTest {
 
     @Test
     public void shouldFormatOne() {
-        Assert.assertEquals("I", formatRoman(1));
+        Assert.assertEquals("I", Roman.formatRoman(1));
     }
 
     @Test
     public void shouldFormatTwo() {
-        Assert.assertEquals("II", formatRoman(2));
+        Assert.assertEquals("II", Roman.formatRoman(2));
     }
 
     @Test
     public void shouldFormatThree() {
-        Assert.assertEquals("III", formatRoman(3));
+        Assert.assertEquals("III", Roman.formatRoman(3));
     }
 
     @Test
     public void shouldFormatFour() {
-        Assert.assertEquals("IV", formatRoman(4));
+        Assert.assertEquals("IV", Roman.formatRoman(4));
     }
 
     @Test
     public void shouldFormatFive() {
-        Assert.assertEquals("V", formatRoman(5));
+        Assert.assertEquals("V", Roman.formatRoman(5));
     }
 
     @Test
     public void shouldFormatSix() {
-        Assert.assertEquals("VI", formatRoman(6));
+        Assert.assertEquals("VI", Roman.formatRoman(6));
     }
 
     @Test
     public void shouldFormatSeven() {
-        Assert.assertEquals("VII", formatRoman(7));
+        Assert.assertEquals("VII", Roman.formatRoman(7));
     }
 
     @Test
     public void shouldFormatEight() {
-        Assert.assertEquals("VIII", formatRoman(8));
+        Assert.assertEquals("VIII", Roman.formatRoman(8));
     }
 
     @Test
     public void shouldFormatNine() {
-        Assert.assertEquals("IX", formatRoman(9));
+        Assert.assertEquals("IX", Roman.formatRoman(9));
     }
 
     @Test
     public void shouldFormatTen() {
-        Assert.assertEquals("X", formatRoman(10));
+        Assert.assertEquals("X", Roman.formatRoman(10));
     }
 
     @Test
     public void shouldFormatFourteen() {
-        Assert.assertEquals("XIV", formatRoman(14));
+        Assert.assertEquals("XIV", Roman.formatRoman(14));
     }
 
     @Test
     public void shouldFormatFifteen() {
-        Assert.assertEquals("XV", formatRoman(15));
-        Assert.assertEquals("XVI", formatRoman(16));
-        Assert.assertEquals("XVII", formatRoman(17));
-        Assert.assertEquals("XVIII", formatRoman(18));
-        Assert.assertEquals("XIX", formatRoman(19));
+        Assert.assertEquals("XV", Roman.formatRoman(15));
+        Assert.assertEquals("XVI", Roman.formatRoman(16));
+        Assert.assertEquals("XVII", Roman.formatRoman(17));
+        Assert.assertEquals("XVIII", Roman.formatRoman(18));
+        Assert.assertEquals("XIX", Roman.formatRoman(19));
     }
 
     @Test
     public void shouldFormatTwentyFour() {
-        Assert.assertEquals("XXIV", formatRoman(24));
-        Assert.assertEquals("XXXIV", formatRoman(34));
+        Assert.assertEquals("XXIV", Roman.formatRoman(24));
+        Assert.assertEquals("XXXIV", Roman.formatRoman(34));
     }
 
     @Test
     public void shouldFormatTeen() {
-        Assert.assertEquals("XI", formatRoman(11));
-        Assert.assertEquals("XII", formatRoman(12));
-        Assert.assertEquals("XIII", formatRoman(13));
+        Assert.assertEquals("XI", Roman.formatRoman(11));
+        Assert.assertEquals("XII", Roman.formatRoman(12));
+        Assert.assertEquals("XIII", Roman.formatRoman(13));
     }
 
     @Test
     public void shouldFormatForty() {
-        Assert.assertEquals("XL", formatRoman(40));
-        Assert.assertEquals("XLIX", formatRoman(49));
+        Assert.assertEquals("XL", Roman.formatRoman(40));
+        Assert.assertEquals("XLIX", Roman.formatRoman(49));
     }
 
     @Test
     public void shouldFormatFifty() {
-        Assert.assertEquals("L", formatRoman(50));
-        Assert.assertEquals("LIX", formatRoman(59));
+        Assert.assertEquals("L", Roman.formatRoman(50));
+        Assert.assertEquals("LIX", Roman.formatRoman(59));
     }
 
     @Test
     public void shouldFormatHundred() {
-        Assert.assertEquals("XC", formatRoman(90));
-        Assert.assertEquals("XCIX", formatRoman(99));
-        Assert.assertEquals("C", formatRoman(100));
-        Assert.assertEquals("CX", formatRoman(110));
-        Assert.assertEquals("CL", formatRoman(150));
-        Assert.assertEquals("CXLIX", formatRoman(149));
-        Assert.assertEquals("CCC", formatRoman(300));
+        Assert.assertEquals("XC", Roman.formatRoman(90));
+        Assert.assertEquals("XCIX", Roman.formatRoman(99));
+        Assert.assertEquals("C", Roman.formatRoman(100));
+        Assert.assertEquals("CX", Roman.formatRoman(110));
+        Assert.assertEquals("CL", Roman.formatRoman(150));
+        Assert.assertEquals("CXLIX", Roman.formatRoman(149));
+        Assert.assertEquals("CCC", Roman.formatRoman(300));
     }
 
     @Test
     public void shouldFormatFiveHundred() {
-        Assert.assertEquals("CD", formatRoman(400));
-        Assert.assertEquals("CDL", formatRoman(450));
-        Assert.assertEquals("CDXCIX", formatRoman(499));
-        Assert.assertEquals("D", formatRoman(500));
-        Assert.assertEquals("DL", formatRoman(550));
-        Assert.assertEquals("DXCIX", formatRoman(599));
-        Assert.assertEquals("DC", formatRoman(600));
-        Assert.assertEquals("DCC", formatRoman(700));
-        Assert.assertEquals("DCCC", formatRoman(800));
-        Assert.assertEquals("DCCCXCIX", formatRoman(899));
+        Assert.assertEquals("CD", Roman.formatRoman(400));
+        Assert.assertEquals("CDL", Roman.formatRoman(450));
+        Assert.assertEquals("CDXCIX", Roman.formatRoman(499));
+        Assert.assertEquals("D", Roman.formatRoman(500));
+        Assert.assertEquals("DL", Roman.formatRoman(550));
+        Assert.assertEquals("DXCIX", Roman.formatRoman(599));
+        Assert.assertEquals("DC", Roman.formatRoman(600));
+        Assert.assertEquals("DCC", Roman.formatRoman(700));
+        Assert.assertEquals("DCCC", Roman.formatRoman(800));
+        Assert.assertEquals("DCCCXCIX", Roman.formatRoman(899));
     }
 
     @Test
     public void shouldFormatThousand() {
-        Assert.assertEquals("CM", formatRoman(900));
-        Assert.assertEquals("CMXCIX", formatRoman(999));
-        Assert.assertEquals("M", formatRoman(1000));
-        Assert.assertEquals("MCDL", formatRoman(1450));
-        Assert.assertEquals("MD", formatRoman(1500));
-        Assert.assertEquals("MCMXCIX", formatRoman(1999));
-        Assert.assertEquals("MM", formatRoman(2000));
-        Assert.assertEquals("MMM", formatRoman(3000));
-        Assert.assertEquals("MMMCMXCIX", formatRoman(3999));
+        Assert.assertEquals("CM", Roman.formatRoman(900));
+        Assert.assertEquals("CMXCIX", Roman.formatRoman(999));
+        Assert.assertEquals("M", Roman.formatRoman(1000));
+        Assert.assertEquals("MCDL", Roman.formatRoman(1450));
+        Assert.assertEquals("MD", Roman.formatRoman(1500));
+        Assert.assertEquals("MCMXCIX", Roman.formatRoman(1999));
+        Assert.assertEquals("MM", Roman.formatRoman(2000));
+        Assert.assertEquals("MMM", Roman.formatRoman(3000));
+        Assert.assertEquals("MMMCMXCIX", Roman.formatRoman(3999));
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void shouldThrowForExceededNumber() {
-        formatRoman(4000);
+        Roman.formatRoman(4000);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void shouldThrowForNegativeOne() {
-        formatRoman(-1);
+        Roman.formatRoman(-1);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void shouldThrowForNegativeTwo() {
-        formatRoman(-2);
+        Roman.formatRoman(-2);
     }
 
     @Test(expected = IllegalArgumentException.class)
     public void shouldThrowForZero() {
-        formatRoman(0);
-    }
-
-
-    private String formatRoman(int number) {
-        if (number < 1) {
-            throw new IllegalArgumentException();
-        }
-        if (number > 3999) {
-            throw new IllegalArgumentException();
-        }
-        return formatRomanNonNegative(number);
-    }
-
-    private static String formatRomanNonNegative(int number) {
-        Map<Integer, String> digits = new LinkedHashMap<>();
-        digits.put(1000, "M");
-        digits.put(900, "CM");
-        digits.put(500, "D");
-        digits.put(400, "CD");
-        digits.put(100, "C");
-        digits.put(90, "XC");
-        digits.put(50, "L");
-        digits.put(40, "XL");
-        digits.put(10, "X");
-        digits.put(9, "IX");
-        digits.put(5, "V");
-        digits.put(4, "IV");
-        digits.put(1, "I");
-        return formatNumberWithDigits(number, digits);
-    }
-
-    private static String formatNumberWithDigits(int remainder, Map<Integer, String> digits) {
-        StringBuilder formattedNumber = new StringBuilder();
-        for (Map.Entry<Integer, String> entry : digits.entrySet()) {
-            while (remainder >= entry.getKey()) {
-                formattedNumber.append(entry.getValue());
-                remainder -= entry.getKey();
-            }
-        }
-        return formattedNumber.toString();
+        Roman.formatRoman(0);
     }
 }
