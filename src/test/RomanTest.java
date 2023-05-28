@@ -120,6 +120,19 @@ public class RomanTest {
         Assert.assertEquals("DCCCXCIX", formatRoman(899));
     }
 
+    @Test
+    public void shouldFormatThousand() {
+        Assert.assertEquals("CM", formatRoman(900));
+        Assert.assertEquals("CMXCIX", formatRoman(999));
+        Assert.assertEquals("M", formatRoman(1000));
+        Assert.assertEquals("MCDL", formatRoman(1450));
+        Assert.assertEquals("MD", formatRoman(1500));
+        Assert.assertEquals("MCMXCIX", formatRoman(1999));
+        Assert.assertEquals("MM", formatRoman(2000));
+        Assert.assertEquals("MMM", formatRoman(3000));
+        Assert.assertEquals("MMMCMXCIX", formatRoman(3999));
+    }
+
     @Test(expected = IllegalArgumentException.class)
     public void shouldThrowForNegativeOne() {
         formatRoman(-1);
@@ -145,6 +158,8 @@ public class RomanTest {
 
     private static String formatRomanNonNegative(int number) {
         Map<Integer, String> digits = new LinkedHashMap<>();
+        digits.put(1000, "M");
+        digits.put(900, "CM");
         digits.put(500, "D");
         digits.put(400, "CD");
         digits.put(100, "C");
