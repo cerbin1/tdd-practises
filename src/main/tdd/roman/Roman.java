@@ -4,8 +4,10 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class Roman {
+    public Roman() {
+    }
 
-    public static String formatRoman(int number) {
+    public String formatRoman(int number) {
         if (number < 1) {
             throw new IllegalArgumentException();
         }
@@ -15,7 +17,7 @@ public class Roman {
         return formatRomanNonNegative(number);
     }
 
-    private static String formatRomanNonNegative(int number) {
+    private String formatRomanNonNegative(int number) {
         Map<Integer, String> digits = new LinkedHashMap<>();
         digits.put(1000, "M");
         digits.put(900, "CM");
@@ -33,7 +35,7 @@ public class Roman {
         return formatNumberWithDigits(number, digits);
     }
 
-    private static String formatNumberWithDigits(int remainder, Map<Integer, String> digits) {
+    private String formatNumberWithDigits(int remainder, Map<Integer, String> digits) {
         StringBuilder formattedNumber = new StringBuilder();
         for (Map.Entry<Integer, String> entry : digits.entrySet()) {
             while (remainder >= entry.getKey()) {
